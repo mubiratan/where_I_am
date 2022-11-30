@@ -8,11 +8,29 @@
 <!-- AMCL Node -->
   <node name="amcl" pkg="amcl" type="amcl" output="screen">
 	<remap from="scan" to="/scan"/>
+
+	<!-- overall filter -->
+	<param name="min_particles" value="50"/>
+	<param name="max_particles" value="200"/>
+	<param name="update_min_a" value="0.1"/>
+	<param name="update_min_d" value="0.25"/>
+
+	<!-- Laser -->
+	<param name="laser_max_beams" value="20"/>
+	<param name="laser_z_hit" value="0.05"/>
+	<param name="laser_z_rand" value="0.95"/>
+
+	<!-- Odom -->
 	<param name="odom_frame_id" value="odom"/>
 	<param name="odom_model_type" value="diff-corrected"/>
 	<param name="base_frame_id" value="robot_footprint"/>
 	<param name="global_frame_id" value="map"/>
 
+	<param name="odom_alphas" value="0.05"/>
+	<param name="odom_alphas" value="0.05"/>
+	<param name="odom_alphas" value="0.05"/>
+	<param name="odom_alphas" value="0.05"/>
+	
 	<param name="initial_pose_x" value="0"/>
 	<param name="initial_pose_y" value="0"/>
   </node>
