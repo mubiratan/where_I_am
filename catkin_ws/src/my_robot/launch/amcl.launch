@@ -16,6 +16,7 @@
 	<param name="update_min_d" value="0.25"/>
 
 	<!-- Laser -->
+	<param name="laser_*_range" value="20"/>
 	<param name="laser_max_beams" value="20"/>
 	<param name="laser_z_hit" value="0.05"/>
 	<param name="laser_z_rand" value="0.95"/>
