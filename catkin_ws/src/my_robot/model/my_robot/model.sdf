@@ -1,10 +1,10 @@
 <?xml version='1.0'?>
-<sdf version='1.6'>
+<sdf version='1.7'>
   <model name='my_robot'>
     <link name='robot_footprint'>
-      <pose frame=''>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0.001329 0 0.2 0 -0 0</pose>
+        <pose>0.001329 0 0.2 0 -0 0</pose>
         <mass>30.1</mass>
         <inertia>
           <ixx>0.100002</ixx>
@@ -33,7 +33,7 @@
           </clip>
         </camera>
         <plugin name='camera_controller' filename='libgazebo_ros_camera.so'>
-          <alwaysOn>true</alwaysOn>
+          <alwaysOn>1</alwaysOn>
           <updateRate>0.0</updateRate>
           <cameraName>camera</cameraName>
           <imageTopicName>rgb/image_raw</imageTopicName>
@@ -47,7 +47,7 @@
           <distortionT2>0.0</distortionT2>
           <robotNamespace>/</robotNamespace>
         </plugin>
-        <pose frame=''>0.4 0 0.2 0 -0 0</pose>
+        <pose>0.4 0 0.2 0 -0 0</pose>
       </sensor>
       <sensor name='head_hokuyo_sensor' type='ray'>
         <visualize>0</visualize>
@@ -82,58 +82,35 @@
           <frameName>hokuyo</frameName>
           <robotNamespace>/</robotNamespace>
         </plugin>
-        <pose frame=''>0.3 0 0.3 0 -0 0</pose>
+        <pose>0.3 0 0.3 0 -0 0</pose>
       </sensor>
       <gravity>1</gravity>
-      <visual name='robot_footprint_fixed_joint_lump__chassis_visual_visual'>
-        <pose frame=''>0 0 0.2 0 -0 0</pose>
+      <enable_wind>0</enable_wind>
+      <visual name='robot_footprint_fixed_joint_lump__hokuyo_visual_visual_4'>
+        <pose>0.4 0 0.3 0 -0 0</pose>
         <geometry>
-          <box>
-            <size>0.8 0.4 0.2</size>
-          </box>
+          <mesh>
+            <uri>/home/marcio/estudos/where_I_am/catkin_ws/src/my_robot/meshes/hokuyo.dae</uri>
+          </mesh>
         </geometry>
         <material>
           <script>
-            <name>Gazebo/Green</name>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <uri>__default__</uri>
+            <name>ModelPreview_1::robot_footprint::robot_footprint_fixed_joint_lump__hokuyo_visual_visual_4_MATERIAL_</name>
           </script>
-          <shader type='pixel'/>
-          <ambient>0 1 0 1</ambient>
-          <diffuse>0 1 0 1</diffuse>
-          <specular>0.1 0.1 0.1 1</specular>
+          <shader type='pixel'>
+            <normal_map>__default__</normal_map>
+          </shader>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 1</specular>
           <emissive>0 0 0 1</emissive>
-        </material>
-        <transparency>0</transparency>
-        <cast_shadows>1</cast_shadows>
-      </visual>
-      <visual name='robot_footprint_fixed_joint_lump__back_caster_visual_visual_1'>
-        <pose frame=''>-0.25 0 0.1 0 -0 0</pose>
-        <geometry>
-          <sphere>
-            <radius>0.1</radius>
-          </sphere>
-        </geometry>
-        <material>
-          <shader type='pixel'/>
-        </material>
-        <cast_shadows>1</cast_shadows>
-        <transparency>0</transparency>
-      </visual>
-      <visual name='robot_footprint_fixed_joint_lump__front_caster_visual_visual_2'>
-        <pose frame=''>0.25 0 0.1 0 -0 0</pose>
-        <geometry>
-          <sphere>
-            <radius>0.1</radius>
-          </sphere>
-        </geometry>
-        <material>
-          <shader type='pixel'/>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
       <visual name='robot_footprint_fixed_joint_lump__camera_visual_visual_3'>
-        <pose frame=''>0.4 0 0.2 0 -0 0</pose>
+        <pose>0.4 0 0.2 0 -0 0</pose>
         <geometry>
           <box>
             <size>0.05 0.05 0.05</size>
@@ -144,7 +121,9 @@
             <name>Gazebo/Blue</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
-          <shader type='pixel'/>
+          <shader type='pixel'>
+            <normal_map>__default__</normal_map>
+          </shader>
           <ambient>0 0 1 1</ambient>
           <diffuse>0 0 1 1</diffuse>
           <specular>0.1 0.1 0.1 1</specular>
@@ -153,28 +132,189 @@
         <transparency>0</transparency>
         <cast_shadows>1</cast_shadows>
       </visual>
-      <visual name='robot_footprint_fixed_joint_lump__hokuyo_visual_visual_4'>
-        <pose frame=''>0.3 0 0.3 0 -0 0</pose>
+      <visual name='robot_footprint_fixed_joint_lump__back_caster_visual_visual_1'>
+        <pose>-0.25 0 0.1 0 -0 0</pose>
         <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>/home/workspace/catkin_ws/src/my_robot/meshes/hokuyo.dae</uri>
-          </mesh>
+          <sphere>
+            <radius>0.1</radius>
+          </sphere>
         </geometry>
         <material>
+          <shader type='pixel'>
+            <normal_map>__default__</normal_map>
+          </shader>
           <script>
+            <name>ModelPreview_1::robot_footprint::robot_footprint_fixed_joint_lump__back_caster_visual_visual_1_MATERIAL_</name>
             <uri>__default__</uri>
-            <name>__default__</name>
           </script>
-          <shader type='pixel'/>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <visual name='robot_footprint_fixed_joint_lump__chassis_visual_visual'>
+        <pose>0 0 0.2 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.8 0.4 0.2</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <shader type='pixel'>
+            <normal_map>__default__</normal_map>
+          </shader>
+          <ambient>0 1 0 1</ambient>
+          <diffuse>0 1 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <visual name='robot_footprint_fixed_joint_lump__front_caster_visual_visual_2'>
+        <pose>0.25 0 0.1 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.1</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <shader type='pixel'>
+            <normal_map>__default__</normal_map>
+          </shader>
+          <script>
+            <name>ModelPreview_1::robot_footprint::robot_footprint_fixed_joint_lump__front_caster_visual_visual_2_MATERIAL_</name>
+            <uri>__default__</uri>
+          </script>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+        <cast_shadows>1</cast_shadows>
+        <transparency>0</transparency>
+      </visual>
+      <collision name='robot_footprint_fixed_joint_lump__collision_collision_4'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0.3 0 0.3 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+            <torsional>
+              <coefficient>1</coefficient>
+              <patch_radius>0</patch_radius>
+              <surface_radius>0</surface_radius>
+              <use_patch_radius>1</use_patch_radius>
+              <ode>
+                <slip>0</slip>
+              </ode>
+            </torsional>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0</restitution_coefficient>
+            <threshold>1e+06</threshold>
+          </bounce>
+          <contact>
+            <collide_without_contact>0</collide_without_contact>
+            <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+            <collide_bitmask>1</collide_bitmask>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0</min_depth>
+            </ode>
+            <bullet>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </bullet>
+          </contact>
+        </surface>
+      </collision>
+      <collision name='robot_footprint_fixed_joint_lump__collision_collision_3'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0.4 0 0.2 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.05</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+            <torsional>
+              <coefficient>1</coefficient>
+              <patch_radius>0</patch_radius>
+              <surface_radius>0</surface_radius>
+              <use_patch_radius>1</use_patch_radius>
+              <ode>
+                <slip>0</slip>
+              </ode>
+            </torsional>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0</restitution_coefficient>
+            <threshold>1e+06</threshold>
+          </bounce>
+          <contact>
+            <collide_without_contact>0</collide_without_contact>
+            <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+            <collide_bitmask>1</collide_bitmask>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0</min_depth>
+            </ode>
+            <bullet>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </bullet>
+          </contact>
+        </surface>
+      </collision>
       <collision name='robot_footprint_fixed_joint_lump__collision_collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0.2 0 -0 0</pose>
+        <pose>0 0 0.2 0 -0 0</pose>
         <geometry>
           <box>
             <size>0.8 0.4 0.2</size>
@@ -229,7 +369,7 @@
       <collision name='robot_footprint_fixed_joint_lump__back_caster_collision_collision_1'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>-0.25 0 0.1 0 -0 0</pose>
+        <pose>-0.25 0 0.1 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.0998</radius>
@@ -284,7 +424,7 @@
       <collision name='robot_footprint_fixed_joint_lump__front_caster_collision_collision_2'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0.25 0 0.1 0 -0 0</pose>
+        <pose>0.25 0 0.1 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.0998</radius>
@@ -336,121 +476,11 @@
           </contact>
         </surface>
       </collision>
-      <collision name='robot_footprint_fixed_joint_lump__collision_collision_3'>
-        <laser_retro>0</laser_retro>
-        <max_contacts>10</max_contacts>
-        <pose frame=''>0.4 0 0.2 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.05 0.05 0.05</size>
-          </box>
-        </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>1</mu>
-              <mu2>1</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
-            </ode>
-            <torsional>
-              <coefficient>1</coefficient>
-              <patch_radius>0</patch_radius>
-              <surface_radius>0</surface_radius>
-              <use_patch_radius>1</use_patch_radius>
-              <ode>
-                <slip>0</slip>
-              </ode>
-            </torsional>
-          </friction>
-          <bounce>
-            <restitution_coefficient>0</restitution_coefficient>
-            <threshold>1e+06</threshold>
-          </bounce>
-          <contact>
-            <collide_without_contact>0</collide_without_contact>
-            <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-            <collide_bitmask>1</collide_bitmask>
-            <ode>
-              <soft_cfm>0</soft_cfm>
-              <soft_erp>0.2</soft_erp>
-              <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
-              <min_depth>0</min_depth>
-            </ode>
-            <bullet>
-              <split_impulse>1</split_impulse>
-              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-              <soft_cfm>0</soft_cfm>
-              <soft_erp>0.2</soft_erp>
-              <kp>1e+13</kp>
-              <kd>1</kd>
-            </bullet>
-          </contact>
-        </surface>
-      </collision>
-      <collision name='robot_footprint_fixed_joint_lump__collision_collision_4'>
-        <laser_retro>0</laser_retro>
-        <max_contacts>10</max_contacts>
-        <pose frame=''>0.3 0 0.3 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.01 0.01 0.01</size>
-          </box>
-        </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>1</mu>
-              <mu2>1</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
-            </ode>
-            <torsional>
-              <coefficient>1</coefficient>
-              <patch_radius>0</patch_radius>
-              <surface_radius>0</surface_radius>
-              <use_patch_radius>1</use_patch_radius>
-              <ode>
-                <slip>0</slip>
-              </ode>
-            </torsional>
-          </friction>
-          <bounce>
-            <restitution_coefficient>0</restitution_coefficient>
-            <threshold>1e+06</threshold>
-          </bounce>
-          <contact>
-            <collide_without_contact>0</collide_without_contact>
-            <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-            <collide_bitmask>1</collide_bitmask>
-            <ode>
-              <soft_cfm>0</soft_cfm>
-              <soft_erp>0.2</soft_erp>
-              <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
-              <min_depth>0</min_depth>
-            </ode>
-            <bullet>
-              <split_impulse>1</split_impulse>
-              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-              <soft_cfm>0</soft_cfm>
-              <soft_erp>0.2</soft_erp>
-              <kp>1e+13</kp>
-              <kd>1</kd>
-            </bullet>
-          </contact>
-        </surface>
-      </collision>
     </link>
     <link name='left_wheel'>
-      <pose frame=''>0 0.3 0.2 0 -0 0</pose>
+      <pose>0 0.3 0.2 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <mass>5</mass>
         <inertia>
           <ixx>0.1</ixx>
@@ -464,8 +494,9 @@
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <velocity_decay/>
+      <enable_wind>0</enable_wind>
       <visual name='left_wheel_visual_visual'>
-        <pose frame=''>0 -0.07 0 -3.13685 1.57079 -1.56615</pose>
+        <pose>0 -0.07 0 -3.12268 1.57079 -1.55198</pose>
         <geometry>
           <cylinder>
             <length>0.05</length>
@@ -489,7 +520,7 @@
       <collision name='left_wheel_fixed_joint_lump__collision_collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 -0.07 0 3.14159 1.57079 -1.57089</pose>
+        <pose>0 -0.07 0 3.14159 1.57079 -1.57089</pose>
         <geometry>
           <cylinder>
             <radius>0.2</radius>
@@ -544,9 +575,9 @@
       </collision>
     </link>
     <link name='right_wheel'>
-      <pose frame=''>0 -0.3 0.2 0 -0 0</pose>
+      <pose>0 -0.3 0.2 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <mass>5</mass>
         <inertia>
           <ixx>0.1</ixx>
@@ -560,8 +591,9 @@
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <velocity_decay/>
+      <enable_wind>0</enable_wind>
       <visual name='right_wheel_visual_visual'>
-        <pose frame=''>0 0.07 0 -3.13685 1.57079 -1.56615</pose>
+        <pose>0 0.07 0 -3.12268 1.57079 -1.55198</pose>
         <geometry>
           <cylinder>
             <length>0.05</length>
@@ -585,7 +617,7 @@
       <collision name='right_wheel_fixed_joint_lump__collision_collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0.07 0 3.14159 1.57079 -1.57089</pose>
+        <pose>0 0.07 0 3.14159 1.57079 -1.57089</pose>
         <geometry>
           <cylinder>
             <radius>0.2</radius>
@@ -642,10 +674,9 @@
     <joint name='left_wheel_hinge' type='revolute'>
       <parent>robot_footprint</parent>
       <child>left_wheel</child>
-      <pose frame=''>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
         <limit>
           <lower>-1e+16</lower>
           <upper>1e+16</upper>
@@ -675,10 +706,9 @@
     <joint name='right_wheel_hinge' type='revolute'>
       <parent>robot_footprint</parent>
       <child>right_wheel</child>
-      <pose frame=''>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
         <limit>
           <lower>-1e+16</lower>
           <upper>1e+16</upper>
@@ -708,8 +738,8 @@
     <static>0</static>
     <allow_auto_disable>1</allow_auto_disable>
     <plugin name='differential_drive_controller' filename='libgazebo_ros_diff_drive.so'>
-      <legacyMode>false</legacyMode>
-      <alwaysOn>true</alwaysOn>
+      <legacyMode>0</legacyMode>
+      <alwaysOn>1</alwaysOn>
       <updateRate>10</updateRate>
       <leftJoint>left_wheel_hinge</leftJoint>
       <rightJoint>right_wheel_hinge</rightJoint>
@@ -720,14 +750,14 @@
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
       <robotBaseFrame>robot_footprint</robotBaseFrame>
-      <publishWheelTF>false</publishWheelTF>
-      <publishWheelJointState>false</publishWheelJointState>
+      <publishWheelTF>0</publishWheelTF>
+      <publishWheelJointState>0</publishWheelJointState>
       <rosDebugLevel>na</rosDebugLevel>
       <wheelAcceleration>0</wheelAcceleration>
       <wheelTorque>5</wheelTorque>
       <odometrySource>world</odometrySource>
       <publishTf>1</publishTf>
-      <publishOdomTF>true</publishOdomTF>
+      <publishOdomTF>1</publishOdomTF>
       <robotNamespace>/</robotNamespace>
     </plugin>
   </model>
